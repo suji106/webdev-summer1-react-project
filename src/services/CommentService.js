@@ -6,7 +6,7 @@ class CommentServicce {
     constructor(singletonToken) {
         if (_singleton !== singletonToken)
             throw new Error('Cannot instantiate directly.');
-        this.resolve = this.resolve.bind(this);
+        // this.resolve = this.resolve.bind(this);
     }
 
     static get instance() {
