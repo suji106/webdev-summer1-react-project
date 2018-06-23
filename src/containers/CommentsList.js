@@ -19,7 +19,8 @@ class CommentsList extends React.Component {
     }
 
     componentWillReceiveProps(newProps) {
-        this.setState({userId: newProps.params.userId})
+        console.log(newProps)
+        this.setState({projectId: newProps.projectId})
     }
 
     componentDidMount() {

@@ -28,7 +28,7 @@ body {
     border-bottom-color: transparent;
 }
 
-.tip-left {
+.contributor_tip {
     top: 10px;
     left: -25px;
     border-top-color: transparent;
@@ -44,13 +44,35 @@ body {
     border-bottom-color: transparent;
 }
 
-.dialogbox .body {
+.contributor_dialog .contributor_body {
     position: relative;
     max-width: 300px;
     height: auto;
     margin: 20px 10px;
     padding: 5px;
     background-color: #ffb200;
+    border-radius: 1px;
+    border: 2px solid brown;
+}
+
+.owner_dialog .owner_body {
+    position: relative;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 10px;
+    padding: 5px;
+    background-color: pink;
+    border-radius: 1px;
+    border: 2px solid brown;
+}
+
+.mentor_dialog .mentor_body {
+    position: relative;
+    max-width: 300px;
+    height: auto;
+    margin: 20px 10px;
+    padding: 5px;
+    background-color: blue;
     border-radius: 1px;
     border: 2px solid brown;
 }
@@ -92,11 +114,29 @@ body {
 }
 
 
-.body .message {
+.contributor_body .contributor_message {
     min-height: 30px;
     border-radius: 3px;
     font-family: Arial;
     font-size: 14px;
     line-height: 1.5;
-    color: black;
+    color: red;
+}
+
+.owner_body .owner_message {
+    min-height: 30px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: blue;
+}
+
+.mentor_body .mentor_message {
+    min-height: 30px;
+    border-radius: 3px;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
 }

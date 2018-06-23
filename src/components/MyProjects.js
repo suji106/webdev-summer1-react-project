@@ -1,6 +1,7 @@
 import React from 'react';
 import MyProjectsService from "../services/MyProjectsService";
 import ProjectTile from "./ProjectTile";
+import CommentsList from "../containers/CommentsList";
 
 class MyProjects extends React.Component {
     constructor(props) {
@@ -64,30 +65,6 @@ class MyProjects extends React.Component {
         this.setState(toThis);
     }
 
-    // renderProjects(stater) {
-    //     console.log("renderProjects")
-    //     console.log(this.state)
-    //
-    //     return (
-    //         stater.map((project, index) => {
-    //                 console.log(project);
-    //                 return (
-    //                 <div className="card text-black  mb-3">
-    //                     <div className="card-header">{project.title}</div>
-    //                     <div className="card-body">
-    //                         <p className="card-text">{project.summary}</p>
-    //                         <ul>
-    //                             {project.languages.split(" ").map(language => (<li> {language}</li>))}
-    //                         </ul>
-    //                     </div>
-    //                 </div>
-    //             )
-    //             }
-    //         )
-    //     )
-    // }
-
-
     render() {
         console.log("renderingProjectsForUser");
 
@@ -111,6 +88,7 @@ class MyProjects extends React.Component {
                 <div className="card-deck">
                     {this.state.rejected.map(project => (<ProjectTile project={project}/>))}
                 </div>
+                <CommentsList projectId='222'/>
             </div>
         )
     }
