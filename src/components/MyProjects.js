@@ -25,7 +25,7 @@ class MyProjects extends React.Component {
 
     componentDidMount() {
         console.log("mountedMyProjects");
-        fetch("http://nucode-java.herokuapp.com/api/UID/requests/accepted"
+        fetch("http://nucode-java.herokuapp.com/api/requests/accepted"
             .replace('UID', this.state.userId))
             .then(response => (response.json())
             )
@@ -34,14 +34,14 @@ class MyProjects extends React.Component {
                 accepted: projects
             }));
 
-        fetch("http://nucode-java.herokuapp.com/api/UID/requests/pending"
+        fetch("http://nucode-java.herokuapp.com/api/requests/pending"
             .replace('UID', this.state.userId))
             .then(response => (response.json())
             )
             .then(projects => this.setState({
                 pending: projects
             }));
-        fetch("http://nucode-java.herokuapp.com/api/UID/requests/rejected"
+        fetch("http://nucode-java.herokuapp.com/api/requests/rejected"
             .replace('UID', this.state.userId))
             .then(response => (response.json())
             )

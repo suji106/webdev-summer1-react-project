@@ -8,6 +8,7 @@ import MyProjects from "./components/MyProjects";
 ReactDOM.render(
     <div className="container-fluid">
         <MyProjects/>
+        {/*<Profile userId={162}/>*/}
     </div>,
     document.getElementById('root')
 );
