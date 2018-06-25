@@ -9,18 +9,16 @@ class CommentsList extends React.Component {
         this.state = {
             comments: [],
             created: '',
-            projectId: 2,
+            projectId: 62,
             user: {
                 userId: 22
-            }
+            },
+            comment: ''
         }
         this.commentService = CommentService.instance;
         this.renderComment = this.renderComment.bind(this);
-    }
-
-    componentWillReceiveProps(newProps) {
-        console.log(newProps)
-        this.setState({projectId: newProps.projectId})
+        this.createComment = this.createComment.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
 
     componentDidMount() {
@@ -47,6 +45,10 @@ class CommentsList extends React.Component {
         )
     }
 
+    createComment() {
+        this.commentService.createComment(this.state.comment, this.state.projectId, this.componentDidMount);
+    }
+
     render() {
         console.log("renderingCommentsForProject");
         console.log(this.state)
@@ -60,6 +62,17 @@ class CommentsList extends React.Component {
                     {this.state.comments.map(comment => (
                         <Comment commentObject={comment}/>
                     ))}
+                </div>
+                <div>
+                    <input onChange={event => {
+                        this.setState({
+                            comment: event.target.value
+                        })
+                    }}/>
+                    <button className="btn btn-primary"
+                            onClick={this.createComment}>
+                        Post Comment
+                    </button>
                 </div>
             </div>
         )
